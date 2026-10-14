@@ -1,5 +1,4 @@
 import React from 'react';
-import BMI_DATA from '../constants/bmiData';
 
 const BMIResult = ({ bmi, category, description, recommendations, markerPosition }) => {
   if (!bmi) return null;

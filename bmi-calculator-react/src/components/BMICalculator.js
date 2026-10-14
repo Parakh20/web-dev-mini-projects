@@ -7,10 +7,6 @@ const BMICalculator = ({ onCalculate, onClear, unit, switchUnits }) => {
   const [errors, setErrors] = useState({ height: '', weight: '' });
 
   useEffect(() => {
-    validateInputs();
-  }, [height, weight, unit]);
-
-  const validateInputs = () => {
     const newErrors = { height: '', weight: '' };
     const validation = BMI_DATA.validation;
     const heightKey = `height_${unit}`;
@@ -31,7 +27,7 @@ const BMICalculator = ({ onCalculate, onClear, unit, switchUnits }) => {
     }
     
     setErrors(newErrors);
-  };
+  }, [height, weight, unit]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
