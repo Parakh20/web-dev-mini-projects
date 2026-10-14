@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentForge - AI Agent Builder & Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__content">
+            <div class="header__logo">
+                <h1>🤖 AgentForge</h1>
+                <span class="header__subtitle">AI Agent Builder & Simulator</span>
+            </div>
+            <nav class="header__nav">
+                <button class="btn btn--outline btn--sm" id="importBtn">Import JSON</button>
+                <button class="btn btn--secondary btn--sm" id="exportBtn">Export JSON</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <!-- Left Sidebar - Components -->
+        <aside class="sidebar sidebar--left">
+            <h3 class="sidebar__title">Components</h3>
+            
+            <div class="component-section">
+                <h4 class="component-section__title">Data Sources</h4>
+                <div class="component-list">
+                    <div class="component-block" data-type="data-source" data-subtype="crm">
+                        <span class="component-icon">👥</span>
+                        <span class="component-name">CRM</span>
+                    </div>
+                    <div class="component-block" data-type="data-source" data-subtype="database">
+                        <span class="component-icon">🗄️</span>
+                        <span class="component-name">Database</span>
+                    </div>
+                    <div class="component-block" data-type="data-source" data-subtype="api">
+                        <span class="component-icon">🔗</span>
+                        <span class="component-name">API</span>
+                    </div>
+                    <div class="component-block" data-type="data-source" data-subtype="file">
+                        <span class="component-icon">📄</span>
+                        <span class="component-name">File</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-section">
+                <h4 class="component-section__title">Actions</h4>
+                <div class="component-list">
+                    <div class="component-block" data-type="action" data-subtype="llm-summary">
+                        <span class="component-icon">🤖</span>
+                        <span class="component-name">LLM Summary</span>
+                    </div>
+                    <div class="component-block" data-type="action" data-subtype="transform">
+                        <span class="component-icon">⚙️</span>
+                        <span class="component-name">Transform</span>
+                    </div>
+                    <div class="component-block" data-type="action" data-subtype="filter">
+                        <span class="component-icon">🔍</span>
+                        <span class="component-name">Filter</span>
+                    </div>
+                    <div class="component-block" data-type="action" data-subtype="validate">
+                        <span class="component-icon">✅</span>
+                        <span class="component-name">Validate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-section">
+                <h4 class="component-section__title">Outputs</h4>
+                <div class="component-list">
+                    <div class="component-block" data-type="output" data-subtype="send-email">
+                        <span class="component-icon">📧</span>
+                        <span class="component-name">Send Email</span>
+                    </div>
+                    <div class="component-block" data-type="output" data-subtype="save-db">
+                        <span class="component-icon">💾</span>
+                        <span class="component-name">Save to DB</span>
+                    </div>
+                    <div class="component-block" data-type="output" data-subtype="report">
+                        <span class="component-icon">📊</span>
+                        <span class="component-name">Generate Report</span>
+                    </div>
+                    <div class="component-block" data-type="output" data-subtype="webhook">
+                        <span class="component-icon">🔔</span>
+                        <span class="component-name">Webhook</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Canvas -->
+        <main class="canvas-container">
+            <div class="canvas-toolbar">
+                <button class="btn btn--outline btn--sm" id="zoomInBtn">Zoom In</button>
+                <button class="btn btn--outline btn--sm" id="zoomOutBtn">Zoom Out</button>
+                <button class="btn btn--outline btn--sm" id="resetZoomBtn">Reset Zoom</button>
+            </div>
+            <div class="canvas" id="canvas">
+                <svg class="canvas__connections" id="connectionsLayer"></svg>
+                <div class="canvas__grid"></div>
+                <div class="canvas__blocks" id="blocksContainer"></div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Properties & Simulation -->
+        <aside class="sidebar sidebar--right">
+            <div class="sidebar-section">
+                <h3 class="sidebar__title">Simulation</h3>
+                <button class="btn btn--primary btn--full-width" id="runSimulationBtn">Run Simulation</button>
+                <div class="simulation-status" id="simulationStatus">
+                    <div class="status-indicator" id="statusIndicator">Ready</div>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar__title">Properties</h3>
+                <div class="properties-panel" id="propertiesPanel">
+                    <p class="properties-empty">Click on a block to configure its properties</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Bottom Panel - Logs -->
+    <div class="bottom-panel">
+        <div class="bottom-panel__header">
+            <h3>Execution Logs</h3>
+            <button class="btn btn--outline btn--sm" id="clearLogsBtn">Clear Logs</button>
+        </div>
+        <div class="logs-container" id="logsContainer">
+            <div class="log-entry log-entry--info">
+                <span class="log-timestamp">2025-07-03 16:54:00</span>
+                <span class="log-message">AgentForge initialized - Ready to build workflows</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Modal -->
+    <div class="modal" id="propertyModal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 id="modalTitle">Configure Block</h3>
+                <button class="modal__close" id="closeModal">×</button>
+            </div>
+            <div class="modal__body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--secondary" id="cancelBtn">Cancel</button>
+                <button class="btn btn--primary" id="saveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu__item" id="deleteBlockBtn">Delete Block</div>
+        <div class="context-menu__item" id="duplicateBlockBtn">Duplicate Block</div>
+    </div>
+
+    <!-- File Input (hidden) -->
+    <input type="file" id="fileInput" accept=".json" style="display: none;">
+
+    <script src="app.js"></script>
+</body>
+</html>
