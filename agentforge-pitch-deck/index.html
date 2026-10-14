@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentForge - Pitch Deck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pitch-deck-container">
+        <!-- Slide Counter -->
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">10</span>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation-controls">
+            <button id="prev-btn" class="nav-btn" disabled>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <button id="next-btn" class="nav-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-content title-slide">
+                <div class="logo-section">
+                    <h1 class="company-name">AgentForge</h1>
+                    <p class="tagline">Privacy-First No-Code Platform for Enterprise AI Agents</p>
+                </div>
+                <div class="presenter-info">
+                    <p class="funding-ask">$6M Series Seed</p>
+                    <p class="target-arr">Target: $200M ARR by 2030</p>
+                </div>
+                <div class="website-link">
+                    <a href="https://parakh20.github.io/agentforge_mvp/" target="_blank" class="btn btn--primary">
+                        View Live MVP
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Statement -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2>The Problem</h2>
+                <p class="slide-subtitle">Enterprise AI adoption faces significant barriers</p>
+                <div class="problem-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">74%</span>
+                        <span class="stat-label">Security & Compliance Concerns</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">38%</span>
+                        <span class="stat-label">Skills Gap</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">26%</span>
+                        <span class="stat-label">Cost Barriers</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1751646043/pplx_code_interpreter/a240e37f_vjcpgf.jpg" alt="AI Adoption Barriers Chart" class="chart-image">
+                </div>
+                <div class="key-insights">
+                    <ul>
+                        <li>Only 42% of organizations actively use AI</li>
+                        <li>40% are still exploring AI solutions</li>
+                        <li>Security and compliance dominate decision-making</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: AI-Powered Solution -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2>AI-Powered Solution</h2>
+                <p class="slide-subtitle">AgentForge: Privacy-First No-Code Platform</p>
+                <div class="solution-grid">
+                    <div class="solution-features">
+                        <h3>Core Features</h3>
+                        <ul>
+                            <li>Privacy-by-Design Architecture</li>
+                            <li>End-to-End Encryption</li>
+                            <li>On-Premises & VPC Deployment</li>
+                            <li>50+ Enterprise Connectors</li>
+                            <li>Drag-and-Drop Workflow Builder</li>
+                            <li>GDPR & EU AI Act Compliance</li>
+                            <li>Multi-Model AI Support</li>
+                            <li>Real-Time Simulation Engine</li>
+                        </ul>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="platform-demo">
+                            <h3>How It Works</h3>
+                            <div class="demo-steps">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Connect your enterprise systems</span>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Build workflows visually</span>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Deploy AI agents securely</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Target Audience & Market Opportunity -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2>Target Audience & Market Opportunity</h2>
+                <p class="slide-subtitle">$236B market by 2034 with 45.82% CAGR</p>
+                <div class="market-section">
+                    <div class="target-customers">
+                        <h3>Primary Target</h3>
+                        <div class="customer-profile">
+                            <div class="profile-item">
+                                <strong>Company Size:</strong> Mid-Market Enterprises ($50M-$500M revenue)
+                            </div>
+                            <div class="profile-item">
+                                <strong>Employees:</strong> 200-2,000 staff members
+                            </div>
+                            <div class="profile-item">
+                                <strong>Industries:</strong> Financial Services, Healthcare, Manufacturing, Insurance
+                            </div>
+                            <div class="profile-item">
+                                <strong>Budget:</strong> $100K-$500K annually for automation
+                            </div>
+                            <div class="profile-item">
+                                <strong>Global Opportunity:</strong> 150,000+ companies in target range
+                            </div>
+                        </div>
+                    </div>
+                    <div class="market-size">
+                        <h3>Market Size</h3>
+                        <div class="market-metrics">
+                            <div class="metric">
+                                <span class="metric-value">$236B</span>
+                                <span class="metric-label">TAM (Total Addressable Market)</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$24B</span>
+                                <span class="metric-label">SAM (Serviceable Addressable Market)</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$1.2B</span>
+                                <span class="metric-label">SOM (Serviceable Obtainable Market)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1751645815/pplx_code_interpreter/db089e63_mjgciu.jpg" alt="Market Growth Chart" class="chart-image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: MVP Prototype -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2>MVP Prototype</h2>
+                <p class="slide-subtitle">Live demonstration of core functionality</p>
+                <div class="mvp-section">
+                    <div class="mvp-features">
+                        <h3>Core Functionality</h3>
+                        <ul>
+                            <li>Visual workflow builder with drag-and-drop interface</li>
+                            <li>Pre-built templates for common automation scenarios</li>
+                            <li>Real-time testing and simulation environment</li>
+                            <li>Enterprise system integrations (CRM, ERP, HR)</li>
+                            <li>AI model configuration and training</li>
+                            <li>Compliance monitoring and reporting</li>
+                        </ul>
+                    </div>
+                    <div class="mvp-demo">
+                        <h3>User Flow</h3>
+                        <div class="flow-diagram">
+                            <div class="flow-step">
+                                <div class="flow-icon">📝</div>
+                                <div class="flow-text">Create Workflow</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-icon">🔗</div>
+                                <div class="flow-text">Connect Systems</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-icon">🧠</div>
+                                <div class="flow-text">Configure AI</div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-icon">🚀</div>
+                                <div class="flow-text">Deploy Agent</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <a href="https://parakh20.github.io/agentforge_mvp/" target="_blank" class="btn btn--primary btn--lg">
+                        Try Interactive Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Business Model & Go-to-Market Strategy -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2>Business Model & Go-to-Market Strategy</h2>
+                <p class="slide-subtitle">Multiple revenue streams with enterprise focus</p>
+                <div class="business-model-section">
+                    <div class="pricing-tiers">
+                        <h3>Pricing Model</h3>
+                        <div class="tiers">
+                            <div class="tier">
+                                <div class="tier-name">Starter</div>
+                                <div class="tier-price">$1,000/month</div>
+                                <div class="tier-features">5 agents, basic integrations</div>
+                            </div>
+                            <div class="tier">
+                                <div class="tier-name">Professional</div>
+                                <div class="tier-price">$4,000/month</div>
+                                <div class="tier-features">Unlimited agents, advanced features</div>
+                            </div>
+                            <div class="tier">
+                                <div class="tier-name">Enterprise</div>
+                                <div class="tier-price">$10,000+/month</div>
+                                <div class="tier-features">Custom pricing, dedicated support</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gtm-strategy">
+                        <h3>Go-to-Market Strategy</h3>
+                        <ul>
+                            <li><strong>Direct Sales:</strong> Enterprise sales team targeting mid-market</li>
+                            <li><strong>Partner Channel:</strong> Systems integrators and consultants</li>
+                            <li><strong>Content Marketing:</strong> AI compliance and privacy thought leadership</li>
+                            <li><strong>Industry Events:</strong> Trade shows and enterprise conferences</li>
+                            <li><strong>Freemium Model:</strong> 30-day free trial with limited features</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roi-section">
+                    <h3>Proven ROI Across Industries</h3>
+                    <div class="chart-container">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1751645968/pplx_code_interpreter/a49daf8e_psa1q6.jpg" alt="ROI by Industry Chart" class="chart-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Competitive Landscape -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <h2>Competitive Landscape</h2>
+                <p class="slide-subtitle">Leading in privacy-first and compliance-ready solutions</p>
+                <div class="competitive-section">
+                    <div class="competitive-chart">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1751645888/pplx_code_interpreter/5c3699c9_vw6vce.jpg" alt="Competitive Radar Chart" class="chart-image">
+                    </div>
+                    <div class="competitive-analysis">
+                        <h3>Key Differentiators</h3>
+                        <div class="differentiators">
+                            <div class="differentiator">
+                                <strong>Privacy-First:</strong> On-prem deployment with zero-knowledge architecture
+                            </div>
+                            <div class="differentiator">
+                                <strong>Compliance-Ready:</strong> Built-in GDPR, EU AI Act, SOC-2 frameworks
+                            </div>
+                            <div class="differentiator">
+                                <strong>No-Code:</strong> Visual workflow builder for non-technical users
+                            </div>
+                            <div class="differentiator">
+                                <strong>Enterprise-Grade:</strong> 50+ connectors, 99.9% uptime SLA
+                            </div>
+                        </div>
+                        <div class="competitor-comparison">
+                            <h4>Competitor Analysis</h4>
+                            <div class="competitor">
+                                <strong>Microsoft Copilot Studio:</strong> Strong Microsoft 365 integration but limited privacy options
+                            </div>
+                            <div class="competitor">
+                                <strong>Salesforce Agentforce:</strong> Excellent CRM integration but limited compliance features
+                            </div>
+                            <div class="competitor">
+                                <strong>UiPath:</strong> RPA expertise but high technical complexity
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Use of AI Tools in Development -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <h2>Use of AI Tools in Development</h2>
+                <p class="slide-subtitle">Leveraging AI to build AI solutions</p>
+                <div class="ai-tools-section">
+                    <div class="tools-grid">
+                        <div class="tool-category">
+                            <h3>Research & Strategy</h3>
+                            <div class="tool-item">
+                                <strong>ChatGPT-4:</strong> Market research, content generation, competitive analysis
+                            </div>
+                            <div class="tool-item">
+                                <strong>Perplexity AI:</strong> Real-time market data, regulatory research, fact-checking
+                            </div>
+                        </div>
+                        <div class="tool-category">
+                            <h3>Development</h3>
+                            <div class="tool-item">
+                                <strong>GitHub Copilot:</strong> Code development and documentation
+                            </div>
+                            <div class="tool-item">
+                                <strong>Claude:</strong> Technical architecture documentation and compliance frameworks
+                            </div>
+                        </div>
+                        <div class="tool-category">
+                            <h3>Design & Prototyping</h3>
+                            <div class="tool-item">
+                                <strong>Figma AI:</strong> MVP prototype design and user interface mockups
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-impact">
+                        <h3>Impact on Development</h3>
+                        <ul>
+                            <li>50% faster market research and competitive analysis</li>
+                            <li>30% reduction in development time through AI-assisted coding</li>
+                            <li>Enhanced compliance framework design with AI-powered documentation</li>
+                            <li>Improved user experience through AI-driven design insights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Ethical Considerations -->
+        <div class="slide" id="slide-9">
+            <div class="slide-content">
+                <h2>Ethical Considerations</h2>
+                <p class="slide-subtitle">Responsible AI implementation and governance</p>
+                <div class="ethics-section">
+                    <div class="ethics-grid">
+                        <div class="ethics-item">
+                            <h3>Data Privacy</h3>
+                            <div class="challenge">
+                                <strong>Challenge:</strong> AI systems require vast amounts of data, raising privacy concerns
+                            </div>
+                            <div class="solution">
+                                <strong>Our Solution:</strong> Zero-knowledge architecture, on-premises deployment, automated data anonymization
+                            </div>
+                        </div>
+                        <div class="ethics-item">
+                            <h3>Algorithmic Bias</h3>
+                            <div class="challenge">
+                                <strong>Challenge:</strong> AI models can perpetuate biases from training data
+                            </div>
+                            <div class="solution">
+                                <strong>Our Solution:</strong> Multi-model architecture, bias detection tools, diverse training datasets
+                            </div>
+                        </div>
+                        <div class="ethics-item">
+                            <h3>Transparency</h3>
+                            <div class="challenge">
+                                <strong>Challenge:</strong> Complex AI decision-making processes lack explainability
+                            </div>
+                            <div class="solution">
+                                <strong>Our Solution:</strong> Built-in audit trails, decision tree visualization, compliance reporting
+                            </div>
+                        </div>
+                        <div class="ethics-item">
+                            <h3>Regulatory Compliance</h3>
+                            <div class="challenge">
+                                <strong>Challenge:</strong> Evolving AI regulations create compliance uncertainty
+                            </div>
+                            <div class="solution">
+                                <strong>Our Solution:</strong> Proactive EU AI Act compliance, automated regulatory reporting, continuous monitoring
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Financial Projections & Funding Ask -->
+        <div class="slide" id="slide-10">
+            <div class="slide-content">
+                <h2>Financial Projections & Funding Ask</h2>
+                <p class="slide-subtitle">$6M Series Seed to reach $200M ARR by 2030</p>
+                <div class="financial-section">
+                    <div class="projections-chart">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1751646124/pplx_code_interpreter/a59d2a0a_n0q9tu.jpg" alt="Financial Projections Chart" class="chart-image">
+                    </div>
+                    <div class="funding-details">
+                        <h3>Use of Funds</h3>
+                        <div class="funding-breakdown">
+                            <div class="funding-item">
+                                <span class="funding-percentage">40%</span>
+                                <span class="funding-category">Product Development</span>
+                                <span class="funding-description">Core platform, security certifications</span>
+                            </div>
+                            <div class="funding-item">
+                                <span class="funding-percentage">35%</span>
+                                <span class="funding-category">Go-to-Market</span>
+                                <span class="funding-description">Sales team, marketing, customer acquisition</span>
+                            </div>
+                            <div class="funding-item">
+                                <span class="funding-percentage">15%</span>
+                                <span class="funding-category">Operations</span>
+                                <span class="funding-description">Legal, finance, HR infrastructure</span>
+                            </div>
+                            <div class="funding-item">
+                                <span class="funding-percentage">10%</span>
+                                <span class="funding-category">Working Capital</span>
+                                <span class="funding-description">General corporate purposes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-section">
+                    <h3>Leadership Team</h3>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <strong>CEO:</strong> Ex-UiPath GTM lead, $50M quota attainment
+                        </div>
+                        <div class="team-member">
+                            <strong>CTO:</strong> Ex-Stripe UK engineering director, 10k+ TPS scale
+                        </div>
+                        <div class="team-member">
+                            <strong>CPO:</strong> Data privacy lawyer, GDPR & AI regulation expert
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <div class="funding-ask">
+                        <h3>$6M Series Seed</h3>
+                        <p>Join us in revolutionizing enterprise AI automation</p>
+                    </div>
+                    <div class="contact-info">
+                        <a href="mailto:invest@agentforge.ai" class="btn btn--primary btn--lg">
+                            Let's Connect
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
