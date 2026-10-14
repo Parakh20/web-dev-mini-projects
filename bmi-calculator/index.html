@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>BMI Calculator</h1>
+            <p>Calculate your Body Mass Index and get personalized health recommendations</p>
+        </header>
+
+        <main class="main-content">
+            <div class="calculator-section">
+                <div class="card">
+                    <div class="card__body">
+                        <form id="bmi-form" class="bmi-form">
+                            <div class="unit-toggle">
+                                <span class="unit-label">Units:</span>
+                                <div class="toggle-group">
+                                    <button type="button" id="metric-btn" class="btn btn--sm toggle-btn active">Metric</button>
+                                    <button type="button" id="imperial-btn" class="btn btn--sm toggle-btn">Imperial</button>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="height" class="form-label">Height</label>
+                                    <div class="input-group">
+                                        <input type="number" id="height" class="form-control" placeholder="170" min="50" max="300" step="0.1">
+                                        <span class="input-unit" id="height-unit">cm</span>
+                                    </div>
+                                    <div class="error-message" id="height-error"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="weight" class="form-label">Weight</label>
+                                    <div class="input-group">
+                                        <input type="number" id="weight" class="form-control" placeholder="70" min="10" max="500" step="0.1">
+                                        <span class="input-unit" id="weight-unit">kg</span>
+                                    </div>
+                                    <div class="error-message" id="weight-error"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" id="calculate-btn" class="btn btn--primary btn--full-width">Calculate BMI</button>
+                                <button type="button" id="clear-btn" class="btn btn--secondary btn--full-width">Clear</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="card" id="results-card" style="display: none;">
+                    <div class="card__body">
+                        <h2>Your BMI Result</h2>
+                        <div class="bmi-display">
+                            <div class="bmi-value" id="bmi-value">0.0</div>
+                            <div class="bmi-category" id="bmi-category">Normal</div>
+                        </div>
+                        
+                        <div class="bmi-range-indicator">
+                            <div class="range-bar">
+                                <div class="range-marker" id="bmi-marker"></div>
+                                <div class="range-labels">
+                                    <span class="range-label">18.5</span>
+                                    <span class="range-label">25</span>
+                                    <span class="range-label">30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bmi-description" id="bmi-description">
+                            Your BMI indicates a healthy weight range.
+                        </div>
+
+                        <div class="recommendations">
+                            <h3>Health Recommendations</h3>
+                            <ul id="recommendations-list">
+                                <li>Maintain a balanced diet</li>
+                                <li>Exercise regularly</li>
+                                <li>Get regular check-ups</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <div class="card" id="history-card" style="display: none;">
+                    <div class="card__body">
+                        <div class="history-header">
+                            <h2>BMI History</h2>
+                            <button type="button" id="clear-history-btn" class="btn btn--sm btn--outline">Clear History</button>
+                        </div>
+                        <div class="history-list" id="history-list">
+                            <!-- History items will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
