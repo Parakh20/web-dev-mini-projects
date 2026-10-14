@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Task Manager</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item active" data-view="dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Dashboard</span>
+            </button>
+            <button class="nav-item" data-view="tasks">
+                <span class="nav-icon">✓</span>
+                <span class="nav-label">Tasks</span>
+            </button>
+            <button class="nav-item" data-view="calendar">
+                <span class="nav-icon">📅</span>
+                <span class="nav-label">Calendar</span>
+            </button>
+            <button class="nav-item" data-view="analytics">
+                <span class="nav-icon">📈</span>
+                <span class="nav-label">Analytics</span>
+            </button>
+            <button class="nav-item" data-view="profile">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Dashboard View -->
+        <div id="dashboard-view" class="view active">
+            <header class="view-header">
+                <h1>Dashboard</h1>
+                <button class="btn btn-primary" id="quick-add-btn">+ Quick Add Task</button>
+            </header>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-tasks">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completed-tasks">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="progress-tasks">0</div>
+                    <div class="stat-label">In Progress</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="high-priority-tasks">0</div>
+                    <div class="stat-label">High Priority</div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <section class="recent-tasks">
+                    <h3>Recent Tasks</h3>
+                    <div id="recent-tasks-list" class="task-list"></div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Tasks View -->
+        <div id="tasks-view" class="view">
+            <header class="view-header">
+                <h1>Tasks</h1>
+                <div class="task-controls">
+                    <input type="text" id="task-search" placeholder="Search tasks..." class="search-input">
+                    <select id="priority-filter" class="filter-select">
+                        <option value="">All Priorities</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <select id="status-filter" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="todo">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                    <button class="view-toggle" id="view-toggle">Grid View</button>
+                </div>
+            </header>
+            <div id="tasks-container" class="task-list"></div>
+        </div>
+
+        <!-- Calendar View -->
+        <div id="calendar-view" class="view">
+            <header class="view-header">
+                <h1>Calendar</h1>
+                <div class="calendar-controls">
+                    <button id="prev-month" class="btn btn-secondary">‹</button>
+                    <span id="current-month-year"></span>
+                    <button id="next-month" class="btn btn-secondary">›</button>
+                    <button id="today-btn" class="btn btn-primary">Today</button>
+                </div>
+            </header>
+            <div id="calendar-container">
+                <div class="calendar-grid">
+                    <div class="calendar-header">
+                        <div class="day-header">Sun</div>
+                        <div class="day-header">Mon</div>
+                        <div class="day-header">Tue</div>
+                        <div class="day-header">Wed</div>
+                        <div class="day-header">Thu</div>
+                        <div class="day-header">Fri</div>
+                        <div class="day-header">Sat</div>
+                    </div>
+                    <div id="calendar-days" class="calendar-days"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics View -->
+        <div id="analytics-view" class="view">
+            <header class="view-header">
+                <h1>Analytics</h1>
+            </header>
+            <div class="analytics-content">
+                <div class="chart-container">
+                    <h3>Task Progress Overview</h3>
+                    <div id="progress-chart" class="progress-chart">
+                        <div class="progress-bar">
+                            <div class="progress-segment todo-progress"></div>
+                            <div class="progress-segment progress-progress"></div>
+                            <div class="progress-segment done-progress"></div>
+                        </div>
+                        <div class="progress-legend">
+                            <div class="legend-item">
+                                <div class="legend-color todo-color"></div>
+                                <span>To Do</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color progress-color"></div>
+                                <span>In Progress</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color done-color"></div>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile View -->
+        <div id="profile-view" class="view">
+            <header class="view-header">
+                <h1>Profile</h1>
+            </header>
+            <div class="profile-content">
+                <div class="profile-card">
+                    <h3>Export/Import Tasks</h3>
+                    <div class="profile-actions">
+                        <button id="export-tasks" class="btn btn-primary">Export Tasks</button>
+                        <button id="import-tasks" class="btn btn-secondary">Import Tasks</button>
+                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <h3>Keyboard Shortcuts</h3>
+                    <div class="shortcuts">
+                        <div class="shortcut-item">
+                            <kbd>Ctrl + N</kbd>
+                            <span>New Task</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl + F</kbd>
+                            <span>Search Tasks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="fab-btn">+</button>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Task</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Title</label>
+                    <input type="text" id="task-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" name="description" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-due-date">Due Date</label>
+                        <input type="date" id="task-due-date" name="dueDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-status">Status</label>
+                        <select id="task-status" name="status">
+                            <option value="todo">To Do</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-tags">Tags</label>
+                        <input type="text" id="task-tags" name="tags" placeholder="work, urgent, etc.">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
