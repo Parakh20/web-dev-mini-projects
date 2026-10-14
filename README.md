@@ -29,3 +29,7 @@ npm start
 ## History
 
 These projects used to live in separate repositories (`BMI-Calculator`, `bmi-calci-react`, `todo_manager`, `IITB-Journey-Website`, `agentforge_mvp`, `Agentforge_PitchDesk`, `Entroscope`) and were merged here to keep my profile tidy.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
